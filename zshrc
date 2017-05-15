@@ -1,5 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# added by Anaconda3 4.3.1 installer
+export PATH="/home/chuzui/anaconda3/bin:$PATH"
+export PATH="/home/chuzui/Workplace/program/robomongo/bin:$PATH"
+# export LD_LIBRARY_PATH="/home/chuzui/anaconda3/lib:$LD_LIBRARY_PATH"
+
+alias xian="ssh -p 5219 -Y zc016@10.12.8.4"
+alias chat="~/Workplace/chat/chat.py"
+
+
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/chuzui/.oh-my-zsh
@@ -51,7 +60,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git tmux z extract)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -83,3 +92,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
