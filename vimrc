@@ -12,6 +12,8 @@ call vundle#begin('~/some/path/here')
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tpope/vim-surround'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'lifepillar/vim-mucomplete'
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
 
@@ -33,3 +35,13 @@ nnoremap <silent> [B :bfirst<CR>
 nnoremap <silent> ]B :blast<CR>
 
 filetype plugin on
+
+set completeopt+=menuone
+inoremap <expr> <c-e> mucomplete#popup_exit("\<c-e>")
+inoremap <expr> <c-y> mucomplete#popup_exit("\<c-y>")
+inoremap <expr>  <cr> mucomplete#popup_exit("\<cr>")
+set completeopt+=noinsert
+set shortmess+=c   " Shut off completion messages
+set belloff+=ctrlg " If Vim beeps during completion
+let g:mucomplete#enable_auto_at_startup = 1
+
