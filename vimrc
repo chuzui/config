@@ -47,3 +47,5 @@ let g:mucomplete#enable_auto_at_startup = 1
 
 " Code Formatter using google/yapf
 autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
+
+set splitbelow
