@@ -8,7 +8,7 @@ export PATH="/home/chuzui/Workplace/program/robomongo/bin:$PATH"
 alias xian="ssh -p 5219 -Y zc016@10.12.8.4"
 alias chat="~/Workplace/chat/chat.py"
 
-
+source `which activate.sh`
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/chuzui/.oh-my-zsh
@@ -112,3 +112,6 @@ function zle-line-init zle-keymap-select {
      zle -N zle-keymap-select
 
      export KEYTIMEOUT=1
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
