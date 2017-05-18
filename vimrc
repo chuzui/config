@@ -17,6 +17,8 @@ Plugin 'lifepillar/vim-mucomplete'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+
+Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
 
@@ -31,6 +33,8 @@ filetype plugin indent on    " required
 set wildmode=longest,list
 :set hlsearch
 :set incsearch
+set encoding=utf-8
+
 
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
