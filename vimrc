@@ -14,6 +14,9 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'lifepillar/vim-mucomplete'
+
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
 
@@ -49,3 +52,12 @@ let g:mucomplete#enable_auto_at_startup = 1
 autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
 
 set splitbelow
+
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+let g:nerdtree_tabs_open_on_console_startup=1
+map <F2> :NERDTreeSteppedOpen<CR>
+
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
