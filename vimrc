@@ -25,6 +25,7 @@ Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'easymotion/vim-easymotion'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'raimondi/delimitmate'
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
 
