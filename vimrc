@@ -22,6 +22,8 @@ Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'scrooloose/nerdcommenter'
+
+Plugin 'easymotion/vim-easymotion'
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
 
