@@ -20,6 +20,8 @@ Plugin 'jistr/vim-nerdtree-tabs'
 
 Plugin 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'altercation/vim-colors-solarized'
+
+Plugin 'scrooloose/nerdcommenter'
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
 
@@ -72,3 +74,4 @@ let g:solarized_termcolors=256
 syntax enable
 set background=dark
 colorscheme solarized
+
