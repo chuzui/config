@@ -28,7 +28,8 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'raimondi/delimitmate'
 
 Plugin 'Valloric/YouCompleteMe'
-
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
 
@@ -94,3 +95,5 @@ let g:syntastic_check_on_wq = 0
 
 
 let g:jedi#completions_enabled = 0
+
+imap <C-c> <CR><Esc>O
