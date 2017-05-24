@@ -97,3 +97,14 @@ let g:syntastic_check_on_wq = 0
 let g:jedi#completions_enabled = 0
 
 imap <C-c> <CR><Esc>O
+
+
+map <F5> :call CompileAndRun() <CR>
+func! CompileAndRun()
+    exec "w"
+    if &filetype == 'python'
+        exec "!python %"
+    elseif &filetype == 'javascript'
+        exec "!node %"
+    endif
+endfunc
