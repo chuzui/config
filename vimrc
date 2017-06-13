@@ -31,6 +31,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
+
+Plugin 'tpope/vim-fugitive'
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
 
