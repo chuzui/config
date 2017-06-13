@@ -29,6 +29,7 @@ Plugin 'raimondi/delimitmate'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
@@ -102,3 +103,11 @@ endfunc
 
 " enable jsx syntax in js file
 let g:jsx_ext_required = 0
+
+" enable tab to expand emmet
+imap <expr> <C-t> emmet#expandAbbrIntelligent("\<tab>")
+let g:user_emmet_settings = {
+            \  'javascript.jsx' : {
+            \      'extends' : 'jsx',
+            \  },
+            \}
