@@ -28,6 +28,7 @@ Plugin 'raimondi/delimitmate'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 Plugin 'nathanaelkane/vim-indent-guides'
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
@@ -98,3 +99,6 @@ func! CompileAndRun()
         exec "!node %"
     endif
 endfunc
+
+" enable jsx syntax in js file
+let g:jsx_ext_required = 0
