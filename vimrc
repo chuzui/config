@@ -49,6 +49,8 @@ set wildmode=longest,list
 :set incsearch
 set encoding=utf-8
 
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+
 
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
