@@ -44,12 +44,16 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 
-:set shiftwidth=4 softtabstop=4 expandtab
-:set nu
-set wildmode=longest,list
-:set hlsearch
-:set incsearch
+set shiftwidth=4 softtabstop=4 expandtab
+set tabstop=4
+set nu
+set hlsearch
+set incsearch
 set encoding=utf-8
+set splitbelow
+
+set wildmode=longest,list
+set ignorecase smartcase
 
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
@@ -63,8 +67,6 @@ filetype plugin on
 
 " Code Formatter using google/yapf
 autocmd FileType python nnoremap <LocalLeader>= :0,$!yapf<CR>
-
-set splitbelow
 
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 let g:nerdtree_tabs_open_on_console_startup=2
