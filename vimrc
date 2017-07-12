@@ -57,6 +57,9 @@ set ignorecase smartcase
 
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
+" golang config
+autocmd FileType go nnoremap <Leader>g :YcmCompleter GoTo<CR>
+
 
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
