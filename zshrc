@@ -5,7 +5,6 @@ export PATH="/home/chuzui/anaconda3/bin:$PATH"
 export PATH="/home/chuzui/Workplace/program/robomongo/bin:$PATH"
 # export LD_LIBRARY_PATH="/home/chuzui/anaconda3/lib:$LD_LIBRARY_PATH"
 
-alias xian="ssh -p 5219 -Y zc016@10.12.8.4"
 alias xclip="xclip -selection c"
 
 source `which activate.sh`
