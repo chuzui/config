@@ -114,3 +114,8 @@ function zle-line-init zle-keymap-select {
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+bindkey -r "^H"
+bindkey -r "^J"
+bindkey -r "^K"
+bindkey -r "^l"
