@@ -37,6 +37,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'fatih/vim-go'
 Plugin 'SirVer/ultisnips'
 
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
 
