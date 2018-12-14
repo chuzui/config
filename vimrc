@@ -39,6 +39,16 @@ Plugin 'SirVer/ultisnips'
 
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'junegunn/fzf.vim'
+
+Plugin 'christoomey/vim-tmux-navigator'
+
+Plugin 'timburgess/extempore.vim'
+
+Plugin 'rust-lang/rust.vim'
+Plugin 'prabirshrestha/async.vim'
+Plugin 'prabirshrestha/vim-lsp'
+Plugin 'prabirshrestha/asyncomplete.vim'
+Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
 
@@ -150,3 +160,27 @@ endfunction
 inoremap <expr> <CR> pumvisible() ? "<C-R>=ExpandSnippetOrCarriageReturn()<CR>" : "\<CR>"
 
 let g:syntastic_python_flake8_args = "--ignore=E501"
+
+let g:go_metalinter_enabled = ['gofmt', 'goimports', 'vet', 'golint', 'errcheck']
+let g:go_metalinter_autosave = 1
+let g:go_gocode_propose_source = 1
+let g:go_fmt_command = "goimports"
+
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'nightly-2018-12-06', 'rls']},
+        \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'Cargo.toml'))},
+        \ 'whitelist': ['rust'],
+        \ })
+endif
+let g:rustfmt_autosave = 1
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+
+let g:ycm_filetype_blacklist = {
+      \ 'rust': 1,
+      \}
+autocmd FileType rust nmap <leader>r  :RustRun<CR>
+
