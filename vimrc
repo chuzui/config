@@ -49,6 +49,8 @@ Plugin 'prabirshrestha/async.vim'
 Plugin 'prabirshrestha/vim-lsp'
 Plugin 'prabirshrestha/asyncomplete.vim'
 Plugin 'prabirshrestha/asyncomplete-lsp.vim'
+
+Plugin 'JamshedVesuna/vim-markdown-preview'
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
 
@@ -184,3 +186,7 @@ let g:ycm_filetype_blacklist = {
       \}
 autocmd FileType rust nmap <leader>r  :RustRun<CR>
 
+command Tq execute "tabclose"
+
+let vim_markdown_preview_toggle=2
+let vim_markdown_preview_github=0
