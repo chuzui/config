@@ -12,3 +12,7 @@ pip install yapf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+sudo add-apt-repository ppa:gophers/archive
+sudo apt-get update
+sudo apt-get install golang-1.11-go
+
