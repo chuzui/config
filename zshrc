@@ -6,6 +6,7 @@ export PATH="/home/chuzui/Workplace/program/robomongo/bin:$PATH"
 # export LD_LIBRARY_PATH="/home/chuzui/anaconda3/lib:$LD_LIBRARY_PATH"
 
 alias xclip="xclip -selection c"
+alias tldr="tldr -t ocean"
 
 source `which activate.sh`
 
@@ -114,6 +115,17 @@ function zle-line-init zle-keymap-select {
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+gdoc() {
+    cat $HOME/.gosyms | dmenu -l 20 -i -b -p "go doc" | xargs go doc
+}
+
+gitauto (){
+    git add *.md
+    git commit -m "test"
+    git push
+}
 
 bindkey -r "^H"
 bindkey -r "^J"
