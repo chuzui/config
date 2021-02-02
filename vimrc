@@ -11,8 +11,12 @@ call vundle#begin('~/some/path/here')
 " " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'hashivim/vim-terraform'
+Plugin 'juliosueiras/vim-terraform-completion'
+
 Plugin 'tpope/vim-surround'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'psf/black'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -33,16 +37,15 @@ Plugin 'mattn/emmet-vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-rhubarb'
 
 Plugin 'fatih/vim-go'
 Plugin 'SirVer/ultisnips'
 
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 
 Plugin 'christoomey/vim-tmux-navigator'
-
-Plugin 'timburgess/extempore.vim'
 
 Plugin 'rust-lang/rust.vim'
 Plugin 'prabirshrestha/async.vim'
@@ -50,7 +53,13 @@ Plugin 'prabirshrestha/vim-lsp'
 Plugin 'prabirshrestha/asyncomplete.vim'
 Plugin 'prabirshrestha/asyncomplete-lsp.vim'
 
-Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'airblade/vim-gitgutter'
+
+Plugin 'wlangstroth/vim-racket'
+
+Plugin 'rhysd/vim-clang-format'
+
+"Plugin 'JamshedVesuna/vim-markdown-preview'
 " " Add all your plugins here (note older versions of Vundle used Bundle
 " instead of Plugin)
 
@@ -75,8 +84,11 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " golang config
 autocmd FileType go nnoremap <Leader>g :YcmCompleter GoTo<CR>
+autocmd FileType javascript nnoremap <Leader>g :YcmCompleter GoTo<CR>
+autocmd FileType rust nnoremap <Leader>g :YcmCompleter GoTo<CR>
+autocmd FileType cpp nnoremap <Leader>g :YcmCompleter GoTo<CR>
 
-
+autocmd FileType javascript nnoremap <Leader>r :!nodejs %<CR>
 nnoremap <silent> [b :bprevious<CR>
 nnoremap <silent> ]b :bnext<CR>
 nnoremap <silent> [B :bfirst<CR>
@@ -96,11 +108,12 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-set term=screen-256color
-let g:solarized_termcolors=256
 syntax enable
 set background=dark
+set term=screen-256color
+let g:solarized_termcolors=256
 colorscheme solarized
+highlight! link SignColumn LineNr
 
 " syntastic
 set statusline+=%#warningmsg#
@@ -167,6 +180,16 @@ let g:go_metalinter_enabled = ['gofmt', 'goimports', 'vet', 'golint', 'errcheck'
 let g:go_metalinter_autosave = 1
 let g:go_gocode_propose_source = 1
 let g:go_fmt_command = "goimports"
+let g:go_fmt_autosave = 1
+let g:go_fmt_options = {
+    \ 'goimports': '-w -local vibe/',
+    \ 'gofmt': '-s -w',
+    \ }
+"augroup filetype_go 
+    "autocmd!
+    "autocmd FileType go setlocal foldmethod=syntax
+"augroup END
+
 
 if executable('rls')
     au User lsp_setup call lsp#register_server({
@@ -184,9 +207,27 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:ycm_filetype_blacklist = {
       \ 'rust': 1,
       \}
-autocmd FileType rust nmap <leader>r  :RustRun<CR>
+autocmd FileType rust nmap <leader>r  :!cargo run<CR>
 
 command Tq execute "tabclose"
 
 let vim_markdown_preview_toggle=2
 let vim_markdown_preview_github=0
+
+augroup terraform_filetype
+    au!
+    autocmd BufNewFile,BufRead *tf   set filetype=terraform
+augroup END
+
+let g:terraform_align=1
+"let g:terraform_fold_sections=1
+let g:terraform_remap_spacebar=1
+let g:terraform_commentstring='//%s'
+let g:terraform_fmt_on_save=1
+
+autocmd FileType scheme nnoremap <Leader>r :!racket %<CR>
+
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+
+let g:ycm_global_ycm_extra_conf = '$HOME/config/ycm_extra_conf.py'
